@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%; /* Moderate size */
+        margin: auto; /* Center the container horizontally */
+        border: 2px solid black; /* Black border */
+        padding: 20px;
+        box-sizing: border-box; /* Include padding in the width calculation */
+    }
+    .form-container {
+        text-align: center;
+        width: 100%;
+    }
+    .large-input {
+        width: 100%;  /* Make input take full width of form-container */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
+    input[type="text"], textarea {
+        width: 100%; /* Ensure all text inputs and textareas are full width */
+        box-sizing: border-box;
+    }
+    .heading {
+        font-weight: light; /* Make the text bold */
+        font-style: italic; /* Make the text italic */
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1 class="heading">Your Personal Translator</h1>
+
+<div class="container my-5">
+    <div class="form-container">
+        <form method="post" id="chat-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Translate</button>
+        </form>
+    </div>
+</div>
+
+{% if response %}
+    <div class="container my-2">
+        <div class="form-container my-2">
+            <div id="response">
+                <p>Bot's response: {{ response }}</p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

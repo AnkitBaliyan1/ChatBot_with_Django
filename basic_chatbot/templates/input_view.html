@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<!-- input.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Input</title>
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            text-align: center;
+        }
+        .large-input {
+            width: 600px;  /* Adjust the width as needed */
+            height: 40px;  /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+            {% if user_input %}
+                <p>You prompted: {{ user_input }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

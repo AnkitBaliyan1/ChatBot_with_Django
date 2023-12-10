@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .about-section {
+        margin: 20px;
+        padding: 20px;
+    }
+    .point {
+        margin-bottom: 20px;
+    }
+    .heading {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 1em;
+    }
+</style>
+
+<div class="about-section">
+    <div class="point">
+        <h2 class="heading">Objective</h2>
+        <p class="description">
+            My objective here is to deploy sample projects over streamlit. This is a learning excercise. 
+        </p>
+    </div>
+
+    <div class="point">
+        <h2 class="heading">Our History</h2>
+        <p class="description">
+            This is my first application deployment and I intend to get expertise in deploying the projects in here.
+        </p>
+    </div>
+
+    <div class="point">
+        <h2 class="heading">Our Team</h2>
+        <p class="description">
+            I'm a solo learner, taking help from internet and friendly neighbourhood "ChatGPT"
+        </p>
+    </div>
+
+    <div class="point">
+        <h2 class="heading">My Products</h2>
+        <p class="description">
+            Translator is a basic translation application, which translates the user input from any language to English.
+            visit my translator app <a href="../translate">here</a>. 
+        </p>
+        <p class="description">
+            ChatBot is a general purpose assistant, which answers all of your queries.
+            visit my translator app <a href="../response">here</a>. 
+        </p>
+    </div>
+
+
+
+</div>
+{% endblock %}
