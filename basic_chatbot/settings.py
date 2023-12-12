@@ -131,6 +131,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
